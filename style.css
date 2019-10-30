@@ -1,0 +1,49 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: arial black;
+	background-image: radial-gradient(black,#00141a,#002933);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	text-transform: uppercase;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	color: white;
+	display: flex;
+	flex-direction: row-reverse;
+	animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left:30px;
+    margin-top: 5px;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, 0px); }    
+}
+ul li{
+	list-style: none;
+	color: white;
+	font-size: 6em;
+	font-weight: bold;
+	letter-spacing: 10px;
+	filter: blur(2px);
+	transition: 4s;
+}
+ul li:hover,
+ul li:hover ~ li
+{
+	transform: rotate(180deg) translateY(-200px);
+	transition: 2s;
+	filter: blur(20px);
+	opacity: 0;
+	cursor: pointer;
+}
